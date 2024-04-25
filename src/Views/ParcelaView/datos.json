@@ -1,0 +1,24 @@
+[  {
+    "rid": "41f6e6ce-06d0-49c8-9dd3-88c5a87c515d",
+    "bid": "4eda315b-5ada-4c52-8901-bcb99cf41027",
+    "activado": 5,
+    "desactivado": 3,
+    "ciclos": 2,
+    "agua": 2
+  },
+  {
+    "rid": "8cf2a32c-0c3e-49aa-a300-a24528c74ebe",
+    "bid": "4eda315b-5ada-4c52-8901-bcb99cf41027",
+    "activado": 5,
+    "desactivado": 734,
+    "ciclos": 2,
+    "agua": 2
+  },
+  {
+    "rid": "fab42bb9-9d08-4bec-986e-b1a4ceecb795",
+    "bid": "4eda315b-5ada-4c52-8901-bcb99cf41027",
+    "activado": 4,
+    "desactivado": 734,
+    "ciclos": 21,
+    "agua": 2
+  }]

@@ -22,7 +22,7 @@ const cultivo_id = localStorage.getItem('newCultivoId');
 
     // Filtrar los datos por el nombre
     const filteredData = data.filter(item =>
-        item.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+        item.etiqueta.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
     const regresar = () => {
@@ -51,7 +51,7 @@ const cultivo_id = localStorage.getItem('newCultivoId');
 
     const solicitudDeleteBackend = async (id_cultivo) => {
         try {
-            const response = await axios.delete(backenURL + '/api/cultivos/' + id_cultivo);
+            const response = await axios.delete(backenURL + '/agrotech/app/parcela/'+id_cultivo );
             // Verificar el código de estado de la respuesta
             if (response.status === 200) {
                 //Mostrar un swal para indicar que la cepa ha sido agregada exitosamente y despues redirigir al usuario a la vista de MisCepas
@@ -107,7 +107,7 @@ const cultivo_id = localStorage.getItem('newCultivoId');
         }).then((result) => {
             if (result.isConfirmed) {
                 solicitudDeleteBackend(id);
-                deleteFirebaseCultivo(uid, id);
+                //deleteFirebaseCultivo(uid, id);
 
 
             }
@@ -120,11 +120,17 @@ const cultivo_id = localStorage.getItem('newCultivoId');
 
     };
 
+    const goToViewCultivos = (etiqueta, instruccions, id) => {
+        localStorage.setItem('NameParcela', etiqueta);
+        localStorage.setItem('Poligon', instruccions);
+        localStorage.setItem('ParcelaActiva', id);
+        navigate('/View/Parcelas');
+    }
 
     return (
         <div className="containerCardTable">
             <div className="elementsTopContainer">
-                <h1 className='TitleTable' onClick={regresar}>Mis cultivos</h1>
+                <h1 className='TitleTable' onClick={regresar}>Mis parcelas</h1>
                 <input
                     type="text"
                     placeholder="Buscar por nombre"
@@ -138,24 +144,21 @@ const cultivo_id = localStorage.getItem('newCultivoId');
                     <thead className='theadT2'>
                         <tr className='trT2'>
                             <th className='thdT2'>ID</th>
-                            <th className='thdT2'>Nombre de cultivo</th>
-                            <th className='thdT2'>Especie</th>
-                            <th className='thdT2'>Motivo</th>
+                            <th className='thdT2'>Nombre de parcela</th>
                             <th className='thdT2'>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
                         {filteredData.map((item, index) => (
-                            <tr className='trT2' key={item.id}>
+                            <tr className='trT2' key={item.pid}>
                                 <td className='tdT2'>{index + 1 }</td>
-                                <td className='tdT2'>{item.nombre}</td>
-                                <td className='tdT2'>{item.nombre_cepa}</td>
-                                <td className='tdT2'>{item.motivo}</td>
+                                <td className='tdT2'>{item.etiqueta}</td>
+                           
                                 <td className='tdT1'>
                                     <div className="iconContainer">
-                                        <img src={settingsIcon} className='iconTable' />
-                                        <img src={editIcon} onClick={() => editCultivo(item.id, item.nombre, item.nombre_cepa, item.motivo, item.cepa_id)} className='iconTable' />
-                                        <img src={deleteIcon} onClick={() => deleteCultivo(item.id)} className='iconTable' />
+                                        <img src={settingsIcon} onClick={() => goToViewCultivos(item.etiqueta, item.instrucciones, item.pid)} className='iconTable' />
+                        
+                                        <img src={deleteIcon} onClick={() => deleteCultivo(item.pid)} className='iconTable' />
 
                                     </div>
                                 </td>
@@ -167,7 +170,7 @@ const cultivo_id = localStorage.getItem('newCultivoId');
             </div>
             <div className="buttonsBottom">
                 <button className="buttonTable" onClick={regresar}>Regresar</button>
-                <button className="buttonTable" onClick={agregarCultivo}>Crear nuevo</button>
+                <button className="buttonTable" onClick={agregarCultivo}>Crear nueva</button>
             </div>
         </div>
     );

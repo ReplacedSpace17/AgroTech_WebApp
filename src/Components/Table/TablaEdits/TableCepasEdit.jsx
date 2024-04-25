@@ -81,7 +81,7 @@ function TableCepasEdit({ data }) {
     const agregarCepa = () => {
         navigate('/AgregarCepa');
     };
-
+  
 
     const deleteCepa = async (id, nombre) => {
         //alerta de confirmacion

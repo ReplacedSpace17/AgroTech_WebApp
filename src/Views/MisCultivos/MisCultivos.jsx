@@ -48,7 +48,7 @@ function MisCultivos({ datos }) {
 
  const obtenerCultivos = async (id_user) => {
         try {
-            const response = await axios.get(backenURL + '/api/cultivos/user/'+id_user);
+            const response = await axios.get(backenURL + '/agrotech/app/parcela');
             // Verificar el código de estado de la respuesta
             if (response.status === 200) {
                 // Asignar la respuesta al estado de cepas

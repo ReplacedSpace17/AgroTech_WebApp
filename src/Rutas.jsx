@@ -19,6 +19,10 @@ import ScreenCicloLuzConfig from "./Views/MisCultivos/ConfigInicial/ScreenCicloL
 import ScreenConfigPh from "./Views/MisCultivos/ConfigInicial/ScreenPhConfig.jsx"
 import ScreenConfigTemp from "./Views/MisCultivos/ConfigInicial/ScreenTempConfig.jsx"
 
+import ViewParcela from "./Views/ParcelaView/ViewParcela.jsx"
+
+import Vista from "./Views/CultivoParcela.jsx"
+
 function Rutas() {
   return (
     <div className="Aplicacion">
@@ -41,6 +45,10 @@ function Rutas() {
         <Route path="/Settings/LightCycle" element={ <ScreenCicloLuzConfig /> } />
         <Route path="/Settings/Ph" element={ <ScreenConfigPh /> } />
         <Route path="/Settings/Temperature" element={ <ScreenConfigTemp /> } />
+
+        <Route path="/View/Parcelas" element={ <ViewParcela /> } />
+        
+        <Route path="/draw" element={ <Vista /> } />
 
       </Routes>
     </div>

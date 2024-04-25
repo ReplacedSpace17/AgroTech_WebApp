@@ -1,0 +1,17 @@
+.canvas-container {
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.068);
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-container canvas{
+    border-radius: 15px;
+   cursor: pointer;
+}
+
+.cont{
+    
+}

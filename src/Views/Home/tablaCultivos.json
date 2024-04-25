@@ -1,32 +1,14 @@
 [
     {
-        "ID": 1,
-        "Nombre": "Mi cultivo 1",
-        "Especie": "Chlorella vulgaris",
-        "Motivo": "Investigación"
+        "pid": "7c503345-b93e-42c4-8890-eeeb808045aa",
+        "uid": "4820abc3-1b73-4506-9021-e0a61a58385c",
+        "etiqueta": "Parcela Fresa",
+        "instrucciones": "Aqui van las instrucciones de los puntos"
     },
     {
-        "ID": 2,
-        "Nombre": "Mi cultivo 2",
-        "Especie": "Spirogyra sp.",
-        "Motivo": "Comercio"
-    },
-    {
-        "ID": 3,
-        "Nombre": "Mi cultivo 3",
-        "Especie": "Gymnodinium sp.",
-        "Motivo": "Comercio"
-    },
-    {
-        "ID": 4,
-        "Nombre": "Mi cultivo 4",
-        "Especie": "Putschia sp.",
-        "Motivo": "Investigación"
-    },
-    {
-        "ID": 5,
-        "Nombre": "Mi cultivo 5",
-        "Especie": "Vulgaris",
-        "Motivo": "Investigación"
+        "pid": "7c503345-3456-42c4-8890-eeeb808045aa",
+        "uid": "4820abc3-1b73-4506-9021-e0a61a58385c",
+        "etiqueta": "Parcela Fresa",
+        "instrucciones": "Aqui van las instrucciones de los puntos"
     }
 ]

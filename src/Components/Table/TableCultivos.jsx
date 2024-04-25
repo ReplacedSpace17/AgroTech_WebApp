@@ -7,7 +7,7 @@ function TableCultivos({ data }) {
 
     // Filtrar los datos por el nombre
     const filteredData = data.filter(item =>
-        item.Nombre.toLowerCase().includes(searchTerm.toLowerCase())
+        item.etiqueta.toLowerCase().includes(searchTerm.toLowerCase())
     );
     
 
@@ -22,7 +22,7 @@ function TableCultivos({ data }) {
     return (
         <div className="containerCardTable">
             <div className="elementsTopContainer">
-                <h1 className='TitleTable' onClick={goToCultivos}>Mis cultivos</h1>
+                <h1 className='TitleTable' onClick={goToCultivos}>Mis parcelas</h1>
                 <input
                     type="text"
                     placeholder="Buscar por nombre"
@@ -36,18 +36,16 @@ function TableCultivos({ data }) {
                     <thead className='theadT2'>
                         <tr className='trT2'>
                             <th className='thdT2'>ID</th>
-                            <th className='thdT2'>Nombre de cultivo</th>
-                            <th className='thdT2'>Especie</th>
-                            <th className='thdT2'>Motivo</th>
+                            <th className='thdT2'>Etiqueta de parcela</th>
+                        
                         </tr>
                     </thead>
                     <tbody>
                         {filteredData.map((item) => (
-                            <tr className='trT2' key={item.ID}>
-                                <td className='tdT2'>{item.ID}</td>
-                                <td className='tdT2'>{item.Nombre}</td>
-                                <td className='tdT2'>{item.Especie}</td>
-                                <td className='tdT2'>{item.Motivo}</td>
+                            <tr className='trT2' key={item.pid}>
+                                <td className='tdT2'>{item.pid}</td>
+                                <td className='tdT2'>{item.etiqueta}</td>
+                               
                             </tr>
                         ))}
                     </tbody>

@@ -1,0 +1,65 @@
+/* Velocimetro.css */
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Ancho de la tarjeta */
+    height: 300px; /* Altura de la tarjeta */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .velocimetro-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .velocimetro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; /* Ancho del medidor */
+    height: 200px; /* Altura del medidor */
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #f0f0f0; /* Color de fondo del medidor */
+    border: 4px solid #ddd; /* Borde del medidor */
+    box-sizing: border-box;
+  }
+  
+  .barra-izquierda {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #6eb04b; /* Color de la barra izquierda (verde) */
+    transform-origin: bottom right;
+    transform: skewX(45deg); /* Inclina la barra izquierda */
+  }
+  
+  .barra-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #6eb04b; /* Color de la barra derecha (verde) */
+    transform-origin: bottom left;
+    transform: skewX(-45deg); /* Inclina la barra derecha */
+  }
+  
+  .etiqueta {
+    position: absolute;
+    bottom: 20px; /* Posición vertical de la etiqueta */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #555; /* Color del texto de la etiqueta */
+  }
+  
